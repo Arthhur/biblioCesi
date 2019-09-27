@@ -11,7 +11,7 @@ public class BookDao {
 	private static List<Book> books = new ArrayList<Book>();
 	private static Long idSequence = 1L;
 	
-	private BookDao() { }
+	public BookDao() { }
 	
 	
 	public static void addBook(Book book) {
@@ -57,6 +57,21 @@ public class BookDao {
 		} else {
 			throw new UnknownBookException(id);
 		}
+	}
+	
+	public static void emprunter(Long id) throws UnknownBookException {
+		int index = getBookIndexById(id) ;
+		if(index > -1) {
+			Book book = books.get(index);
+			if(book.isEmprunt()) {
+				System.out.println("Livre déjà emprunté");
+			}
+			else {
+				book.setEmprunt(true);
+			}
+		}
+		throw new UnknownBookException(id);
+		
 	}
 	
 	private static int getBookIndexById(Long id) {

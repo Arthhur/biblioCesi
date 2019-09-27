@@ -7,3 +7,12 @@ form {
 	margin : auto ;
 	margin-top : 50px ;
 }
+
+.container-msg {
+	margin-top : 50px ;
+}
+
+.msg_accueil {
+	text-align : center ;
+	font-size : 2em ;
+}

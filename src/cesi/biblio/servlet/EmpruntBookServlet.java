@@ -10,18 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import cesi.biblio.doa.BookDao;
 import cesi.biblio.model.UnknownBookException;
 
-
 /**
- * Servlet implementation class RemoveBookServlet
+ * Servlet implementation class EmpruntBookServlet
  */
-@WebServlet("/auth/removeBook")
-public class RemoveBookServlet extends HttpServlet {
+@WebServlet("/empruntBook")
+public class EmpruntBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RemoveBookServlet() {
+    public EmpruntBookServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +33,7 @@ public class RemoveBookServlet extends HttpServlet {
 		Long id = Long.parseLong(request.getParameter("id"));
 		
 		try {
-			BookDao.removeBook(id);
+			BookDao.emprunter(id); 
 		    HttpServletRequest httpRequest = (HttpServletRequest) request ;
 		    HttpServletResponse res = (HttpServletResponse) response;	
 			res.sendRedirect( httpRequest.getContextPath() + "/showList" );

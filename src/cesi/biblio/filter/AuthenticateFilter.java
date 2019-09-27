@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AuthenticateFilter
  */
-@WebFilter("/test")
+@WebFilter("/auth/*")
 public class AuthenticateFilter implements Filter {
 
     /**
@@ -46,7 +46,7 @@ public class AuthenticateFilter implements Filter {
 		HttpSession session = httpRequest.getSession();
 		String user = (String)session.getAttribute("user") ;
 		 if (user == null) {
-			 res.sendRedirect( httpRequest.getContextPath() + "/index.jsp" );
+			 res.sendRedirect( httpRequest.getContextPath() + "/connexion.jsp" );
 	     } 
 		 else {
 			 chain.doFilter( request, response );

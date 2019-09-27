@@ -31,9 +31,10 @@ public class LogOutServlet extends HttpServlet {
 		HttpServletRequest httpRequest = (HttpServletRequest) request ;
 		HttpSession session = httpRequest.getSession();
 		session.removeAttribute("user");
+		session.removeAttribute("password");
 		
 		HttpServletResponse res = (HttpServletResponse) response;	
-		res.sendRedirect( httpRequest.getContextPath() + "/index.jsp" );	
+		res.sendRedirect( httpRequest.getContextPath() + "/connexion.jsp" );	
 	}
 
 	/**

@@ -12,8 +12,6 @@
 	<body>
 		<div class="container-fluid">
 			<%@ include file="navbar.jsp" %>
-			
-			
 			<div class="container">
 				<c:if test="${user == null}">
 					<form method="post" action="login">

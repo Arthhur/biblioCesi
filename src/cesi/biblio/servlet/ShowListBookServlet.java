@@ -38,9 +38,9 @@ public class ShowListBookServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		 List<Book> books = new ArrayList<Book>() ;
 	       if(this.cmpt == 0) {
-	    	   Book b1 = new Book(1L, "Les Misérables", "Victor Hugo") ;
-	           Book b2 = new Book(1L, "Le tour du monde en 80 jours", "Jules Verne") ;
-	           Book b3 = new Book(1L, "Croc blanc", "Jack London") ;
+	    	   Book b1 = new Book(1L, "Les Misérables", "Victor Hugo", false) ;
+	           Book b2 = new Book(1L, "Le tour du monde en 80 jours", "Jules Verne", true) ;
+	           Book b3 = new Book(1L, "Croc blanc", "Jack London", false) ;
 
 	           BookDao.addBook(b1) ;
 	           BookDao.addBook(b2) ;

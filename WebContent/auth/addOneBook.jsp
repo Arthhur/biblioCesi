@@ -13,7 +13,7 @@
 		<div class="container-fluid">
 			<%@ include file="../navbar.jsp" %>
 			<h1>Add a book</h1>
-	    	<form  method="post" action="addBook">
+	    	<form  method="post" action="../addBook">
 			  <div class="form-group">
 			    <label for="auteur">Auteur</label>
 			    <input type="text" name="auteur" class="form-control" id="auteur" aria-describedby="auteurHelp" placeholder="Auteur">

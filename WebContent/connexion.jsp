@@ -11,18 +11,28 @@
 	<body>
 		<div class="container-fluid">
 			<%@ include file="navbar.jsp" %>
-			<h1>Connexion</h1>
-			<form class="col-md-3" method="post" action="login">
-			  <div class="form-group">
-			    <label for="user">Username</label>
-			    <input type="text" name="user" class="form-control" id="user" aria-describedby="userHelp" placeholder="Username">
-			  </div>
-			  <div class="form-group">
-			    <label for="titre">Password</label>
-			    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
-			</form>	
+			<c:choose>
+				<c:when test="${user == null}">
+				<h1>Connexion</h1>
+				<form class="col-md-3" method="post" action="login">
+				  <div class="form-group">
+				    <label for="user">Username</label>
+				    <input type="text" name="user" class="form-control" id="user" aria-describedby="userHelp" placeholder="Username">
+				  </div>
+				  <div class="form-group">
+				    <label for="titre">Password</label>
+				    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>	
+				</c:when>
+				<c:otherwise>
+					<div class="container-msg">
+						<p class="msg_accueil">Bienvenue <c:out value="${user}" /> dans la bibliotèque du Cesi</p>
+					</div>
+				</c:otherwise>
+			</c:choose>
+			
 		</div>		
 	</body>
 </html>

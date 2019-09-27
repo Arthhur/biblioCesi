@@ -11,6 +11,7 @@
 	<body>
 		<div class="container-fluid">
 			<%@ include file="navbar.jsp" %>
+			<h1>My books</h1>
 			<table class="table">
 				<tr>
 					<th>Id</th>
@@ -20,21 +21,12 @@
 				</tr>
 	
 				<c:forEach items="${Books}" var="book">
-					<c:set var="pathEmprunt" value="auth/empruntBook?id=${book.id}" scope="page" />
-					<c:set var="pathRemove" value="auth/removeBook?id=${book.id}" scope="page" />
+					<c:set var="path" value="auth/removeBook?id=${book.id}" scope="page" />
 					<tr>
 		    			<td><c:out value="${book.id}" /></td>
 		    			<td><c:out value="${book.auteur}" /></td>
 		    			<td><c:out value="${book.titre}" /></td>
-		    			<c:choose>
-							<c:when test="${book.emprunt == false}">  
-		    					<td><a href=${pathEmprunt}><button type="button" class="btn btn-success">Emprunter</button></a></td>						
-		    				</c:when>
-		    				<c:otherwise>
-		    					<td>Déjà emprunté</td>								
-		    				</c:otherwise>
-		    			</c:choose>
-		    			<td><a href=${pathRemove}><button type="button" class="btn btn-danger">Supprimer</button></a></td>						
+		    			<td><a href=${path}><button type="button" class="btn btn-danger">Supprimer</button></a></td>   						
 			    	</tr>
 				</c:forEach>
 			</table> 
