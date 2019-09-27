@@ -1,8 +1,7 @@
 # biblioCesi
 ***** Important ****
 
-Copier le contenu du git dans un dossier nommé "BilbliothequeCesi" et ouvrir dans Eclipse (attention à la faute de frappe, c'est normal)
-
+Clone le dépôt avec le dossier et ouvrir le dossier dans Eclipse
 
 **** ****
 
