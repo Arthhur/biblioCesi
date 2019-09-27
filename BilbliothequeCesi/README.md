@@ -1,4 +1,10 @@
 # biblioCesi
+***** Important ****
+
+Copier le contenu du git dans un dossier nommé "BilbliothequeCesi" et ouvrir dans Eclipse (attention à la faute de frappe, c'est normal)
+
+
+**** ****
 
 L'application démarre sur la page de connexion.
 L'utilisateur ne peut pas consulter car la liste des livres est vide si l'utilisateur n'est pas connecté.
