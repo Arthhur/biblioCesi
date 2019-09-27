@@ -12,17 +12,7 @@
 	<body>
 		<div class="container-fluid">
 			<%@ include file="navbar.jsp" %>
-			<form>
-			  <div class="form-group">
-			    <label for="auteur">Auteur</label>
-			    <input type="text" class="form-control" id="auteur" aria-describedby="auteurHelp" placeholder="Auteur">
-			  </div>
-			  <div class="form-group">
-			    <label for="titre">Titre</label>
-			    <input type="text" class="form-control" id="titre" placeholder="Titre">
-			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
-			</form>
+			
 			
 			<div class="container">
 				<c:if test="${user == null}">
