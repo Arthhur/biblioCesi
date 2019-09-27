@@ -30,8 +30,7 @@ public class LogOutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpServletRequest httpRequest = (HttpServletRequest) request ;
 		HttpSession session = httpRequest.getSession();
-		session.removeAttribute("user");
-		session.removeAttribute("password");
+		session.removeAttribute("User");
 		
 		HttpServletResponse res = (HttpServletResponse) response;	
 		res.sendRedirect( httpRequest.getContextPath() + "/connexion.jsp" );	

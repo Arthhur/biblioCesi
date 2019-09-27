@@ -35,12 +35,11 @@ public class ShowOneBookServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Long id = Long.parseLong(request.getParameter("id"));
-		
 		try {
 			Book book = BookDao.findBookById(id) ;
 			request.setAttribute("Book", book);
 		    ServletContext context = getServletContext();
-		    RequestDispatcher dispatcher = context.getRequestDispatcher("/showOneBook.jsp");
+		    RequestDispatcher dispatcher = context.getRequestDispatcher("/oneBook.jsp");
 		    dispatcher.forward(request, response);
 		} catch (UnknownBookException e) {
 			// TODO Auto-generated catch block

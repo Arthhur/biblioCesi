@@ -11,7 +11,7 @@ public class BookDao {
 	private static List<Book> books = new ArrayList<Book>();
 	private static Long idSequence = 1L;
 	
-	public BookDao() { }
+	private BookDao() { }
 	
 	
 	public static void addBook(Book book) {

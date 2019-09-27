@@ -12,7 +12,7 @@
 		<div class="container-fluid">
 			<%@ include file="navbar.jsp" %>
 			<c:choose>
-				<c:when test="${user == null}">
+				<c:when test="${User.username == null}">
 				<h1>Connexion</h1>
 				<form class="col-md-3" method="post" action="login">
 				  <div class="form-group">
@@ -28,7 +28,7 @@
 				</c:when>
 				<c:otherwise>
 					<div class="container-msg">
-						<p class="msg_accueil">Bienvenue <c:out value="${user}" /> dans la bibliotèque du Cesi</p>
+						<p class="msg_accueil">Bienvenue <c:out value="${User.username}" /> dans la bibliothèque du Cesi</p>
 					</div>
 				</c:otherwise>
 			</c:choose>

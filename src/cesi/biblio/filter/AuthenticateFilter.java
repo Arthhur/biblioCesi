@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cesi.biblio.model.User;
+
 /**
  * Servlet Filter implementation class AuthenticateFilter
  */
@@ -44,7 +46,7 @@ public class AuthenticateFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		 
 		HttpSession session = httpRequest.getSession();
-		String user = (String)session.getAttribute("user") ;
+		User user = (User)session.getAttribute("User") ;
 		 if (user == null) {
 			 res.sendRedirect( httpRequest.getContextPath() + "/connexion.jsp" );
 	     } 

@@ -43,7 +43,7 @@ public class AddBookServlet extends HttpServlet {
 		String auteur = request.getParameter("auteur") ;
 		String titre = request.getParameter("titre") ;
 		
-		Book book = new Book(new Long("01"), auteur, titre) ;
+		Book book = new Book(new Long("01"), titre, auteur) ;
 		BookDao.addBook(book) ;
 		
 		

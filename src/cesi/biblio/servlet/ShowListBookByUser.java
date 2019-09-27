@@ -1,11 +1,23 @@
 package cesi.biblio.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cesi.biblio.doa.BookDao;
+import cesi.biblio.doa.UserDao;
+import cesi.biblio.model.Book;
+import cesi.biblio.model.UnknownBookException;
+import cesi.biblio.model.UnknownUserException;
+import cesi.biblio.model.User;
 
 /**
  * Servlet implementation class ShowListBookByUser
@@ -27,7 +39,20 @@ public class ShowListBookByUser extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		/*Long id = Long.parseLong(request.getParameter("id")) ;
+		List<Book> books = new ArrayList<Book>() ;
+		try {
+			User user = UserDao.findUserById(id) ;
+			books = user.getAllBooks() ;
+			request.setAttribute("MyBooks", books);
+		    ServletContext context = getServletContext();
+		    RequestDispatcher dispatcher = context.getRequestDispatcher("/myBooks.jsp");
+		    dispatcher.forward(request, response);
+		} catch (UnknownUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
 	}
 
 	/**
