@@ -40,7 +40,7 @@ public class BookDao {
 	}
 	
 	
-	public static List<Book> getAllbooks() {
+	public static List<Book> getAllBooks() {
 		return Collections.unmodifiableList(books);
 	}
 	

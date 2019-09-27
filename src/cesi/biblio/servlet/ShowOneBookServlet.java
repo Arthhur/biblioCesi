@@ -1,11 +1,18 @@
 package cesi.biblio.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cesi.biblio.doa.BookDao;
+import cesi.biblio.model.Book;
+import cesi.biblio.model.UnknownBookException;
 
 /**
  * Servlet implementation class ShowOneBookServlet
@@ -27,7 +34,18 @@ public class ShowOneBookServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Long id = Long.parseLong(request.getParameter("id"));
+		
+		try {
+			Book book = BookDao.findBookById(id) ;
+			request.setAttribute("Book", book);
+		    ServletContext context = getServletContext();
+		    RequestDispatcher dispatcher = context.getRequestDispatcher("/showOneBook.jsp");
+		    dispatcher.forward(request, response);
+		} catch (UnknownBookException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

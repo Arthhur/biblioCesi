@@ -38,7 +38,11 @@ public class LoginServlet extends HttpServlet {
 		HttpServletRequest httpRequest = (HttpServletRequest) request ;
 		HttpSession session = request.getSession();
 		String user = request.getParameter("user") ;
+		String password = request.getParameter("password") ;
+		
 		session.setAttribute("user", user);
+		session.setAttribute("password", password);
+		
 		HttpServletResponse res = (HttpServletResponse) response;	
 		res.sendRedirect( httpRequest.getContextPath() + "/index.jsp" );	
 	}

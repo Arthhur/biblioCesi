@@ -46,8 +46,9 @@ public class AddBookServlet extends HttpServlet {
 		Book book = new Book(new Long("01"), auteur, titre) ;
 		BookDao.addBook(book) ;
 		
+		
 		 ServletContext context = getServletContext();
-		 RequestDispatcher dispatcher = context.getRequestDispatcher("/listBook");
+		 RequestDispatcher dispatcher = context.getRequestDispatcher("/showList");
 		 dispatcher.forward(request, response);
 	}
 

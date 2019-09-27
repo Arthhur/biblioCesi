@@ -7,10 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cesi.biblio.doa.BookDao;
+import cesi.biblio.model.UnknownBookException;
+
+
 /**
  * Servlet implementation class RemoveBookServlet
  */
-@WebServlet("/removeBook")
+@WebServlet("/auth/removeBook")
 public class RemoveBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,8 +31,17 @@ public class RemoveBookServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		Long id = Long.parseLong(request.getParameter("id"));
+		
+		try {
+			BookDao.removeBook(id);
+		    HttpServletRequest httpRequest = (HttpServletRequest) request ;
+		    HttpServletResponse res = (HttpServletResponse) response;	
+			res.sendRedirect( httpRequest.getContextPath() + "/listProduct" );
+		} catch (UnknownBookException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
